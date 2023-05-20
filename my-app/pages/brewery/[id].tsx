@@ -32,9 +32,7 @@ export async function getStaticProps(
 }
 
 export default function BreweryPage({ breweryId }: BreweryPageProps) {
-  const { brewery, loading, error } = useBrewery(breweryId);
-
-  console.log(brewery);
+  const { brewery, loading } = useBrewery(breweryId);
 
   return (
     <>
