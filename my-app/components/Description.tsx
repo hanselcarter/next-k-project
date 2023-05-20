@@ -9,7 +9,7 @@ export const Description = ({ brewery }: DescriptionProps) => {
   return (
     <StyledDescriptionOuterDiv>
       <StyledCenteredText>
-        These are all the Brewery properties for {brewery.brewery_type}
+        These are all the Brewery properties for {brewery.name}
       </StyledCenteredText>
       <div>Brewery type: {brewery.brewery_type}</div>
       <div>Brewery street: {brewery.street}</div>

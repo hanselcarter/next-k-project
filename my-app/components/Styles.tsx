@@ -22,3 +22,22 @@ export const StyledListContainerGrid = styled.div`
 export const StyledDescriptionOuterDiv = styled.div`
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 `;
+
+export const StyledInput = styled.input`
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: 30%;
+`;
+
+export const StyledHeadline = styled.h1`
+  color: #green;
+  font-family: "Raleway", sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+
+  text-transform: uppercase;
+`;

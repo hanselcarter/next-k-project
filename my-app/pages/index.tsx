@@ -2,10 +2,25 @@ import Head from "next/head";
 import { useBreweries } from "@/hooks/breweries";
 import LoaderSpinner from "@/components/LoaderSpinner";
 import List from "@/components/List";
-import { StyledListContainerGrid } from "@/components/Styles";
+import {
+  StyledListContainerGrid,
+  StyledInput,
+  StyledHeadline,
+} from "@/components/Styles";
+import { useState } from "react";
 
 export default function Home() {
   const { breweries, loading } = useBreweries();
+
+  const [value, setValue] = useState("");
+
+  const onChangeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  const filteredBreweries = breweries.filter((brewery) => {
+    return brewery.brewery_type.toLowerCase().includes(value.toLowerCase());
+  });
 
   return (
     <div>
@@ -13,12 +28,18 @@ export default function Home() {
         <title>Challenge</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Brewery types</h1>
+      <StyledHeadline>Brewery types</StyledHeadline>
+      <StyledInput
+        type="search"
+        value={value}
+        onChange={onChangeInputValue}
+        placeholder="Search for brewery types"
+      />
       {loading ? (
         <LoaderSpinner />
       ) : (
         <StyledListContainerGrid>
-          {breweries.map((brewery) => (
+          {filteredBreweries.map((brewery) => (
             <List key={brewery.id} brewery={brewery} />
           ))}
         </StyledListContainerGrid>
