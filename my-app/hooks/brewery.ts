@@ -1,22 +1,25 @@
 import { useQuery } from "react-query";
 import { fetchJson } from "@/lib/api";
+import { useRouter } from "next/router";
 
 import { Brewery } from "../interfaces/interfaces";
 
-const BREWERIES_QUERY_KEY = "breweries";
+const BREWERY_QUERY_KEY = "Brewery";
 
 interface UseBreweries {
   error: boolean;
   loading: boolean;
-  breweries: Brewery[];
+  brewery: Brewery | undefined;
 }
 
-export function useBreweries(): UseBreweries {
+export function useBrewery(breweryId: string): UseBreweries {
   const query = useQuery(
-    BREWERIES_QUERY_KEY,
+    BREWERY_QUERY_KEY,
     async () => {
       try {
-        return await fetchJson("https://api.openbrewerydb.org/v1/breweries");
+        return await fetchJson(
+          `https://api.openbrewerydb.org/v1/breweries/${breweryId}`
+        );
       } catch (err) {
         return undefined;
       }
@@ -27,12 +30,10 @@ export function useBreweries(): UseBreweries {
     }
   );
 
-  const breweriesData = query.data as Brewery[] | undefined;
-
-  //Slicing things up, due to many data for the simplicity of the challenge
+  const brewery = query.data as Brewery | undefined;
 
   return {
-    breweries: breweriesData ? breweriesData.slice(0, 5) : [],
+    brewery,
     loading: query.isLoading,
     error: query.isError,
   };

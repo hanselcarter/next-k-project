@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
+
 import { useBreweries } from "@/hooks/breweries";
 import LoaderSpinner from "@/components/LoaderSpinner";
 
