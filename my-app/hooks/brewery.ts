@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import { fetchJson } from "@/lib/api";
-import { useRouter } from "next/router";
 
 import { Brewery } from "../interfaces/interfaces";
 

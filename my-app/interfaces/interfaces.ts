@@ -5,4 +5,5 @@ export interface Brewery {
   city: string;
   country: string;
   street: string;
+  website_url: string;
 }

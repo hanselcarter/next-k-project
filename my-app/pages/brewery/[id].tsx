@@ -10,6 +10,7 @@ import {
   GetStaticPropsContext,
   GetStaticPaths,
 } from "next";
+import Description from "@/components/Description";
 
 //I could have use useRouter but I wanted to do it the ssr way
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
@@ -35,5 +36,13 @@ export default function BreweryPage({ breweryId }: BreweryPageProps) {
 
   console.log(brewery);
 
-  return <>{breweryId ? <LoaderSpinner /> : <h1>hello </h1>}</>;
+  return (
+    <>
+      {loading ? (
+        <LoaderSpinner />
+      ) : (
+        brewery && <Description brewery={brewery}></Description>
+      )}
+    </>
+  );
 }

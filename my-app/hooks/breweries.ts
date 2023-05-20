@@ -32,7 +32,7 @@ export function useBreweries(): UseBreweries {
   //Slicing things up, due to many data for the simplicity of the challenge
 
   return {
-    breweries: breweriesData ? breweriesData.slice(0, 5) : [],
+    breweries: breweriesData ? breweriesData.slice(0, 12) : [],
     loading: query.isLoading,
     error: query.isError,
   };
