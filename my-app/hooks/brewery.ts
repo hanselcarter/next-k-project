@@ -5,13 +5,13 @@ import { Brewery } from "../interfaces/interfaces";
 
 const BREWERY_QUERY_KEY = "Brewery";
 
-interface UseBreweries {
+interface UseBrewery {
   error: boolean;
   loading: boolean;
   brewery: Brewery | undefined;
 }
 
-export function useBrewery(breweryId: string): UseBreweries {
+export function useBrewery(breweryId: string): UseBrewery {
   const query = useQuery(
     BREWERY_QUERY_KEY,
     async () => {
