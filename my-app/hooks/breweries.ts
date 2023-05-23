@@ -29,8 +29,6 @@ export function useBreweries(): UseBreweries {
 
   const breweriesData = query.data as Brewery[] | undefined;
 
-  //Slicing things up, due to many data for the simplicity of the challenge
-
   return {
     breweries: breweriesData ? breweriesData.slice(0, 12) : [],
     loading: query.isLoading,

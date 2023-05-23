@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Challenge</title>
+        <title>next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledHeadline>Brewery types</StyledHeadline>

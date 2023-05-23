@@ -39,4 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Description
 
-This a Brewery app where you can search breweries by type, and a list a breweries matching that type will show up, also you can click on the brewery to know more about it.
+having fun with next js
