@@ -14,7 +14,7 @@ export default function Home() {
 
   const [value, setValue] = useState("");
 
-  const onChangeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeInputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setValue(e.target.value);
   };
 
